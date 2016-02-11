@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/bower_components/editor.md/css/editormd.min.css">
+</head>
+<body ng-app="movieApp">
+
+	<h1><%= title %></h1>
+	<p>Welcome to <%= title %></p>
+	<div id="editormd" style="height:800px;">
+    	<textarea style="display:none;">### Hello Editor.md !</textarea>
+	</div>
+
+	<div ui-view="header"></div>
+	<div ui-view="home"></div>
+	<div ui-view="footer"></div>
+	<div ui-view="postPage"></div>
+	<div ui-view="detail"></div>
+	
+</body>
+	
+	
+
+	<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/editor.md/editormd.min.js"></script>
+		<script type="text/javascript">
+		    $(function() {
+		        var editor = editormd("editormd", {
+		            path : "bower_components/editor.md/lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+		        });
+
+		        /*
+		        // or
+		        var editor = editormd({
+		            id   : "editormd",
+		            path : "../lib/"
+		        });
+		        */
+		    });
+		</script>
+
+	<script src="/javascripts/movies1.js"></script>
+	<script src="/javascripts/controller.js"></script>
+	<script src="/javascripts/service.js"></script>
+
+</html>
