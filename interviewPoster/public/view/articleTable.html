@@ -1,0 +1,90 @@
+
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 input-group"  >
+				<input type="text" class="form-control">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true" ></span></span>	
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="container" ng-show="showArticle" id="details">
+    <div class="row row-content">
+        <div class="col-xs-12">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object img-thumbnail"
+                              src="images/articleLogo.png" style="width:110px;height:110px"  alt="Uthappizza"> 
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{whichArticle.id}}
+                        <span class="label label-primary">{{whichArticle.company}}</span>
+                        <span class="badge">{{whichArticle.position}}</span>
+                    </h2>
+                    <p>{{whichArticle.description}}</p> 
+                </div>
+            </div> 
+        </div>
+
+      <!--   <div class="col-xs-9 col-xs-offset-1">
+         <p><span class="h3" style="margin-right:100px;">Customer Comments</span> <span style="color:gray;margin-right:10px;"></span></p>
+      </div> -->
+    
+        <!-- <div class="col-xs-9 col-xs-offset-1">
+            <div ng-repeat="com in dish.comments | orderBy:order">
+                <blockquote>
+                    <p class="h4">{{com.rating}} Stars</p>
+                    <p class="h4">{{com.comment}} </p>   
+                    <footer>{{com.author}} ,{{com.date | date}}</footer>
+                </blockquote>
+            </div> 
+        </div> -->
+	</div>
+</div>
+
+<div class="container" id="articleTable">
+	<div class="table-responsive">
+		<table class="table table-striped">
+	        <thead>
+	        <tr>
+	            <th> # </th>
+	            <th> Position</th>
+	            <th> Company</th>
+	            <th> date</th>
+	            <th ng-show="true"  ui-sref="index.post"><a class="btn btn-warning btn-sm" ng-click="isPost()"> POST</a></th>
+	        </tr>
+	        </thead>
+	        <tr ng-repeat="article in fenyeAticles" >
+	            <td ng-repeat="prop in article" ng-show="$index < 4">{{prop | uppercase}} </td>
+	            <td> <a class="btn btn-primary btn-sm"  id="{{$index}}" class="articleButton" ng-click="showDetail($index)">DETAIL</a></td>
+	            <td> <a class="btn btn-primary btn-sm"  ng-show="true" ui-sref="index.edit" ng-click="edit($index)">EDIT</a></td>
+	        </tr>
+    	</table>
+	</div>
+</div>
+
+<div class="container">
+    <nav class="col-md-offset-5">
+      <ul class="pagination pagination-lg">
+        <li>
+          <a href="#" aria-label="Previous" ng-click="changePage(-1)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#" ng-click="changePage(0)" >{{currentPageNumber}}</a></li>
+        <li><a href="#" ng-click="changePage(1)" ng-show="pageNumbers > (1 + currentPageNumber)">{{currentPageNumber + 1}}</a></li>
+        <li><a href="#" ng-click="changePage(2)" ng-show="pageNumbers > (2 + currentPageNumber)">{{currentPageNumber + 2}}</a></li>
+        <li><a href="#" ng-click="changePage(3)" ng-show="pageNumbers > (3 + currentPageNumber)">{{currentPageNumber + 3}}</a></li>
+        <li><a href="#" ng-click="changePage(4)" ng-show="pageNumbers > (4 + currentPageNumber)">{{currentPageNumber + 4}}</a></li>
+        <li>
+          <a href="#" aria-label="Next" ng-click="changePage(5)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>

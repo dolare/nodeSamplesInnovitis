@@ -1,0 +1,64 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="font-size:15px;"><strong>Innovitis Technologies</strong></a>
+    </div>
+  
+    <ul class="nav navbar-nav">
+      <li><a href="#" style="font-size:15px;">Home</a></li>
+      <li><a href="#contact" style="font-size:15px;">Contact</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" id="myinput1" >
+          <span class="glyphicon glyphicon-log-in"> Login</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Login </h4>
+      </div>
+      
+      <div class="modal-body">
+        <form class="form-inline">
+          <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" style="width:auto;">                       
+          <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" style="width:auto;">
+          
+          <div class="checkbox" >
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div> 
+        </form>         
+      </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-info">Sign in</button>
+            <button type="button" class="btn btn-default btn-sm"
+           data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+        $(document).ready(function(){
+            $("#myinput1").click(function(){
+                $("#loginModal").modal("show");
+            });
+        });
+</script>  
+  
+
+
+

@@ -1,0 +1,73 @@
+
+<br>
+<br>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Pannel</h3>
+  </div>
+  <div class="panel-body">
+  	<form action="" class="form-horizontal">
+		<div class="form-group">
+			<label for="" class="col-md-2">id:</label>
+			<div class="col-md-8">
+				<input type="text" class="form-control"  placeholder="{{editId}}" disabled>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="col-md-2">company:</label>
+			<div class="col-md-8">
+				<input type="text" class="form-control" ng-model="whichArticle.company" placeholder="{{whichArticle.company}}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="col-md-2">position:</label>
+			<div class="col-md-8">
+				<input type="text" class="form-control" ng-model="whichArticle.position" placeholder="{{whichArticle.position}}">
+			</div>
+		</div>
+		<div class="form-group" ng-controller="dateCtrl">
+			<label for="" class="col-md-2">data:</label>
+			<div class="col-md-8">
+				<input type="text"  ui-date="dateOptions" class="form-control" ng-model="whichArticle.date" placeholder="{{whichArticle.data}}">
+			</div>
+		</div>
+
+	
+		<label for="" class="col-md-1" >description:</label>
+		<br>
+		<div id="editormd" >
+    		<textarea style="display:none;" ng-model="whichArticle.description" placeholder="{{whichArticle.description}}"></textarea>
+		</div>
+
+
+		
+		<div class="col-md-offset-11">
+			<button class="btn btn-primary" ng-show="!isPost" ng-click="update()">SAVE</button>
+		</div>
+
+		<div class="col-md-offset-11">
+			<button class="btn btn-primary" ng-show="isPost" ng-click="post()">POST</button>
+		</div>
+
+  	</form>
+  </div>
+</div>
+
+<script type="text/javascript">
+		    $(function() {
+		        var editor = editormd("editormd", {
+		            path : "bower_components/editor.md/lib/" ,// Autoload modules mode, codemirror, marked... dependents libs path
+		            height:600
+		        });
+
+		        /*
+		        // or
+		        var editor = editormd({
+		            id   : "editormd",
+		            path : "../lib/"
+		        });
+		        */
+		    });
+</script>

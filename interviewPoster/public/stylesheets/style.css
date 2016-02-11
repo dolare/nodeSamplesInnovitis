@@ -1,0 +1,27 @@
+body {
+	padding: 50px;
+/* 	border: 1px blue solid; */
+}
+
+html,body{
+	height: 100%;
+}
+
+a {
+	color: #00B7FF;
+}
+
+header{
+	position: relative;
+	margin: 50px 0 50px 0;
+}
+
+#articleTable{
+	/* //margin:50px 0 50px 0; */
+}
+
+
+footer{
+/* 	border: 1px red solid; */
+}
+
