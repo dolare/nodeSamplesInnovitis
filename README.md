@@ -21,6 +21,7 @@ javascript的运行环境 类似java中的jre1.7包之类的
 1. [bower](https://www.npmjs.com/package/bower)：Bower offers a generic, unopinionated solution to the problem of front-end package management 
 
 2. [gulp](https://www.npmjs.com/package/gulp):helps you automate painful or time-consuming tasks in your development workflow.
+>[JShint](http://jshint.com/) [uglifyJS](http://lisperator.net/uglifyjs/) Minification
 
 3. [yeoman](http://yeoman.io/migrate.html):a generic scaffolding system allowing the creation any kind of app.
 
